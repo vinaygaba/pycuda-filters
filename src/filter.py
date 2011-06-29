@@ -2,7 +2,9 @@
 
 import sys
 import Image
+import cProfile
 from abc import ABCMeta, abstractmethod
+from profiling import Profile
 
 # --------------------------------------- #
 
@@ -24,10 +26,10 @@ class Filter:
             self.images.append(im)
 
     # TODO Esquema de colores como parametro
-    def new_post_img(self, mode, size):
+    def newPostImg(self, mode, size):
         self.post_img = Image.new(mode, size)
 
-    def fetch_result(self):
+    def fetchResult(self):
         return self.post_img
 
     @abstractmethod
@@ -49,9 +51,10 @@ class DifferenceFilter(Filter):
     def __init__(self, *images):
         super(DifferenceFilter, self).__init__(*images)
 
+    # @Profile
     def Apply(self, mode):
-        self.new_post_img(self.images[0].mode, 
-                          (self.images[0].size[0], self.images[0].size[1]))
+        self.newPostImg(self.images[0].mode, 
+                        (self.images[0].size[0], self.images[0].size[1]))
         for x in xrange(self.images[0].size[0]):
             for y in xrange(self.images[0].size[1]):
                 # "diff" resultara ser una tupla de 3 elementos (en imagenes RGB) con la 
@@ -68,5 +71,5 @@ im2 = Image.open(sys.argv[2])
 print sys.argv[1], ": ", im1.format, im1.size, im1.mode, '\n'
 diferencia = DifferenceFilter(im1, im2)
 diferencia.Apply(Filter.CPU)
-post = diferencia.fetch_result()
+post = diferencia.fetchResult()
 post.save("post.png", "PNG")
