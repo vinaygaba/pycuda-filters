@@ -58,8 +58,38 @@ class Filter:
     def _processCUDA(self):
         pass
 
-    @abstractmethod
-    def Apply(self):
+    def Apply(self, mode):
+        # Se instancia una nueva imagen postprocesada, que sera la que contenga
+        # el resultado de haber aplicado el filtro a la/s imagen/es original/es
+        self.newPostImg(self.images[0].mode, (self.images[0].size[0], self.images[0].size[1]))
+        # Ahora se llama al metodo de procesado elegido
+        self.processing_method[mode]()
+
+# --------------------------------------- #
+
+class ThresholdFilter(Filter):
+
+    # Constantes para los valores minimos y maximos de los pixeles
+    MAX_PIXEL_VALUE = 255
+    MIN_PIXEL_VALUE = 0
+    
+    # Valor discriminante (menores que este -> 0; mayores que este -> 255)
+    threshold = 127
+
+    def __init__(self, *images, **kwargs):
+        super(ThresholdFilter, self).__init__(*images)
+        try:
+            self.threshold = kwargs['threshold']
+        except KeyError:
+            pass
+        
+    def _processCPU(self):
+        # Modo "1" equivale a threshold con un valor discriminante estandar de 127
+        # TODO comprobar si retorna una nueva instancia o si la aplica sobre la misma
+        im = self.images[0].convert("1")
+        # self.images[0].point(lambda x: MAX_PIXEL_VALUE if x >= self.threshold else MIN_PIXEL_VALUE)
+
+    def _processCUDA(self):
         pass
 
 # --------------------------------------- #
@@ -72,9 +102,6 @@ class ErosionFilter(Filter):
         pass
 
     def _processCUDA(self):
-        pass
-
-    def Apply(self):
         pass
 
 # --------------------------------------- #
@@ -97,15 +124,6 @@ class DifferenceFilter(Filter):
 
     def _processCUDA(self):
         pass
-
-    # @Profile
-    def Apply(self, mode):
-        # Se instancia una nueva imagen postprocesada, que sera la que contenga
-        # el resultado de haber aplicado el filtro a la/s imagen/es original/es
-        self.newPostImg(self.images[0].mode, (self.images[0].size[0], self.images[0].size[1]))
-        # Ahora se llama al metodo de procesado elegido
-        self.processing_method[mode]()
-
 
 # --------------------------------------- #
 
