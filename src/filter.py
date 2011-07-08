@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/opt/python2.7/bin/python
 
 import sys
 import Image
@@ -85,8 +85,6 @@ class ThresholdFilter(Filter):
             pass
         
     def _processCPU(self):
-        # Modo "1" equivale a threshold con un valor discriminante estandar de 127
-        # TODO comprobar si retorna una nueva instancia o si la aplica sobre la misma
         grayscaled = self.images[0].convert("L")
         self.post_img = grayscaled.point(lambda x: Filter.MAX_PIXEL_VALUE if x >= self.level else Filter.MIN_PIXEL_VALUE)
 
@@ -97,10 +95,8 @@ class ThresholdFilter(Filter):
 
 class ErosionFilter(Filter):
     
-    # Mascara de aplicacion del filtro; contendra tuplas con las sumas que deben efectuarse
-    # a la posicion (x, y) del pixel actual que estamos tratando: por ejemplo, sumar (1, 0)
-    # significa (x + 1, y + 0), osea el pixel situado justo debajo, y por contra sumar (0, -1)
-    # implica (x + 0, y - 1), es decir el pixel situado justo a la izquierda del actual
+    # Mascara de aplicacion del filtro; en el constructor de
+    # la clase se explica con que se rellena esta lista
     mask = []
 
     _kernel = """
@@ -158,6 +154,12 @@ class ErosionFilter(Filter):
     def __init__(self, *images):
         self.images = []
         super(ErosionFilter, self).__init__(*images)
+
+        # La mascara contendra tuplas con las sumas que deben efectuarse a la 
+        # posicion (x, y) del pixel actual que estamos tratando: por ejemplo, 
+        # sumar (1, 0) significa (x + 1, y + 0), osea el pixel situado justo 
+        # debajo, y por contra sumar (0, -1) implica (x + 0, y - 1), es decir 
+        # el pixel situado justo a la izquierda del actual
         self.mask = [(i, j) for i, j in itertools.permutations([-1, 0, 1], 2) if abs(i) != abs(j)]
         
     def _processCPU(self):
@@ -175,9 +177,9 @@ class ErosionFilter(Filter):
                     # La funcion implicita "all()" devuelve True si _todos_ los elementos de un objeto iterable
                     # son asimismo True (o distintos de 0 si los elementos son numericos, como es el caso)
                     if all(surrounding_pixels):
-                        self.post_img.putpixel((row, col), MAX_PIXEL_VALUE)
+                        self.post_img.putpixel((row, col), Filter.MAX_PIXEL_VALUE)
                     else:
-                        self.post_img.putpixel((row, col), MIN_PIXEL_VALUE)
+                        self.post_img.putpixel((row, col), Filter.MIN_PIXEL_VALUE)
 
     def _processCUDA(self):
         cuda.copyToGPU(self.images[0])
@@ -215,16 +217,20 @@ if __name__ == '__main__':
     im1 = Image.open(sys.argv[1])
     im2 = Image.open(sys.argv[2])
     print sys.argv[1], ": ", im1.format, im1.size, im1.mode, '\n'
+
+    # Diferencia
     diferencia = DifferenceFilter(im1, im2)
     diferencia.Apply(Filter.CPU)
     tmp = diferencia.fetchResult()
+
+    # Threshold
     threshold = ThresholdFilter(tmp, level=30)
     threshold.Apply(Filter.CPU)
     tmp2 = threshold.fetchResult()
-    # Despues del filtro de diferencia hay que aplicar Threshold
-    # ...
-    # Y despues del Threshold, Erosion
+
+    # Erosion
     erosion = ErosionFilter(tmp2)
     erosion.Apply(Filter.CPU)
     post = erosion.fetchResult()
+
     post.save("post.png", "PNG")
