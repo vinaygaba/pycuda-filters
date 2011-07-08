@@ -1,4 +1,4 @@
-#!/opt/python2.7/bin/python
+#!/usr/bin/env python
 
 import sys
 import Image
@@ -6,8 +6,7 @@ import cProfile
 import itertools
 from abc import ABCMeta, abstractmethod
 
-import CUDAHandler
-from profiling import Profile
+#import CUDAHandler
 
 # --------------------------------------- #
 
@@ -38,7 +37,7 @@ class Filter:
     def __init__(self, *images):
         for im in images:
             self.images.append(im)
-        self.cuda = CUDAHandler()
+     #   self.cuda = CUDAHandler()
 
         # El diccionario de metodos se inicializa en el constructor ya que
         # daba problemas crearlo directamente en los atributos
@@ -78,6 +77,7 @@ class ThresholdFilter(Filter):
     level = 127
 
     def __init__(self, *images, **kwargs):
+        self.images = []
         super(ThresholdFilter, self).__init__(*images)
         try:
             self.level = kwargs['level']
@@ -87,8 +87,8 @@ class ThresholdFilter(Filter):
     def _processCPU(self):
         # Modo "1" equivale a threshold con un valor discriminante estandar de 127
         # TODO comprobar si retorna una nueva instancia o si la aplica sobre la misma
-        im = self.images[0].convert("1")
-        # self.images[0].point(lambda x: MAX_PIXEL_VALUE if x >= self.level else MIN_PIXEL_VALUE)
+        grayscaled = self.images[0].convert("L")
+        self.post_img = grayscaled.point(lambda x: Filter.MAX_PIXEL_VALUE if x >= self.level else Filter.MIN_PIXEL_VALUE)
 
     def _processCUDA(self):
         pass
@@ -156,14 +156,16 @@ class ErosionFilter(Filter):
     """
 
     def __init__(self, *images):
+        self.images = []
         super(ErosionFilter, self).__init__(*images)
         self.mask = [(i, j) for i, j in itertools.permutations([-1, 0, 1], 2) if abs(i) != abs(j)]
         
     def _processCPU(self):
+        surrounding_pixels = []
         for row in xrange(self.images[0].size[0]):
             for col in xrange(self.images[0].size[1]):
                 try:
-                    surrounding_pixels = [self.images[0].getpixel(([row + i, col + j])) for i, j in self.mask]
+                    surrounding_pixels = [self.images[0].getpixel((row + i, col + j)) for i, j in self.mask]
                 except IndexError:
                     # Si se produjo alguna excepcion de indexado (debido a que estamos situados en algun borde
                     # de la imagen), construimos la lista de pixels adyacentes replicando el pixel actual
@@ -173,9 +175,9 @@ class ErosionFilter(Filter):
                     # La funcion implicita "all()" devuelve True si _todos_ los elementos de un objeto iterable
                     # son asimismo True (o distintos de 0 si los elementos son numericos, como es el caso)
                     if all(surrounding_pixels):
-                        self.post_img.putpixel((row, col), 255)
+                        self.post_img.putpixel((row, col), MAX_PIXEL_VALUE)
                     else:
-                        self.post_img.putpixel((row, col), 0)
+                        self.post_img.putpixel((row, col), MIN_PIXEL_VALUE)
 
     def _processCUDA(self):
         cuda.copyToGPU(self.images[0])
@@ -189,6 +191,7 @@ class ErosionFilter(Filter):
 class DifferenceFilter(Filter):
     
     def __init__(self, *images):
+        self.images = []
         super(DifferenceFilter, self).__init__(*images)
 
     def _processCPU(self):
@@ -215,10 +218,13 @@ if __name__ == '__main__':
     diferencia = DifferenceFilter(im1, im2)
     diferencia.Apply(Filter.CPU)
     tmp = diferencia.fetchResult()
+    threshold = ThresholdFilter(tmp, level=30)
+    threshold.Apply(Filter.CPU)
+    tmp2 = threshold.fetchResult()
     # Despues del filtro de diferencia hay que aplicar Threshold
     # ...
     # Y despues del Threshold, Erosion
-    erosion = ErosionFilter(tmp)
+    erosion = ErosionFilter(tmp2)
     erosion.Apply(Filter.CPU)
     post = erosion.fetchResult()
     post.save("post.png", "PNG")
