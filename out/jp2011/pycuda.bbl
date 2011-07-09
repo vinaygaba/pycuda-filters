@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{DBLP:journals/corr/abs-0911-3456}
+Andreas Kl{\"o}ckner, Nicolas Pinto, Yunsup Lee, Bryan~C. Catanzaro, Paul
+  Ivanov, and Ahmed Fasih,
+\newblock ``Pycuda: Gpu run-time code generation for high-performance
+  computing,''
+\newblock {\em CoRR}, vol. abs/0911.3456, 2009.
+
+\end{thebibliography}
