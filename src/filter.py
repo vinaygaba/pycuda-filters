@@ -2,6 +2,7 @@
 
 import sys
 import Image
+import ImageChops
 import cProfile
 import itertools
 from abc import ABCMeta, abstractmethod
@@ -197,16 +198,7 @@ class DifferenceFilter(Filter):
         super(DifferenceFilter, self).__init__(*images)
 
     def _processCPU(self):
-        # TODO Debe haber una implementacion mas eficiente utilizando numpy
-        for x in xrange(self.images[0].size[0]):
-            for y in xrange(self.images[0].size[1]):
-                # "diff" resultara ser una tupla de 3 elementos (en imagenes RGB) con la 
-                # diferencia en valor absoluto por cada canal en ese pixel, comparado con el
-                # mismo pixel de la imagen anterior
-                diff = tuple([abs(a - b) for a,b in 
-                              zip(self.images[0].getpixel((x, y)), self.images[1].getpixel((x, y)))])
-                # img.putpixel((x, y), value)
-                self.post_img.putpixel((x, y), diff)
+        self.post_img = ImageChops.difference(self.images[0], self.images[1])
 
     def _processCUDA(self):
         pass
