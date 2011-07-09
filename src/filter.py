@@ -1,5 +1,7 @@
 #!/opt/python2.7/bin/python
 
+# !/usr/bin/env python
+
 import sys
 import Image
 import ImageChops
@@ -225,4 +227,9 @@ if __name__ == '__main__':
     erosion.Apply(Filter.CPU)
     post = erosion.fetchResult()
 
-    post.save("post.png", "PNG")
+    # Mergeado
+    r, g, b = im2.split()
+    tmp = ImageChops.add(r, post)
+    merged = Image.merge("RGB", (tmp, g, b))
+
+    merged.save("merged.png", "PNG")
