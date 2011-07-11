@@ -3,7 +3,11 @@
 import sys
 import Image
 import ImageChops
-import Filters
+
+from Filters.filter import Filter
+from Filters.erosion import ErosionFilter
+from Filters.difference import DifferenceFilter
+from Filters.threshold import ThresholdFilter
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:

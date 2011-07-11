@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-
+import ImageChops
 from filter import Filter
 
 class DifferenceFilter(Filter):

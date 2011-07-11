@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from filter import Filter
 
 class ThresholdFilter(Filter):
