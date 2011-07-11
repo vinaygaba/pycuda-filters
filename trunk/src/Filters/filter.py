@@ -1,7 +1,3 @@
-#!/opt/python2.7/bin/python
-
-# !/usr/bin/env python
-
 import sys
 
 import Image
