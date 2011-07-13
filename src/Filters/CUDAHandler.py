@@ -11,15 +11,15 @@ class CUDAHandler:
 
     def __init__(self):
         self.host = []
-        self.gpu = []
-        self.out = []
+        self.device = []
         self.kernel = None
         self.func_name = ""
+        self.operands = 0
 
     def _createGPUArray(self, i):
         try:
             self.host.append(np.array(i).astype(np.float32))
-            self.gpu.append(cuda.mem_alloc(self.host[-1].nbytes))
+            self.device.append(cuda.mem_alloc(self.host[-1].nbytes))
         except ValueError:
             print "[CUDAHandler Error] Invalid datatype. All of its items mus be floats or integers."
             return
@@ -29,12 +29,10 @@ class CUDAHandler:
 
     def loadData(self, **data):
             try:
-                for i in data["input"]:
+                self.operands = len(data["input"])
+                for i in data["input"] + data["output"]:
                    self._createGPUArray(i)            
-                   cuda.memcpy_htod(self.gpu[-1], self.host[-1])
-                for i in data["output"]:
-                   self.gpu.append(cuda.mem_alloc(np.array(i).astype(np.float32).nbytes))
-                   cuda.memcpy_htod(self.gpu[-1], i) 
+                   cuda.memcpy_htod(self.device[-1], self.host[-1])
             except KeyError:
                 print "[CUDAHandler Error] I/O mismatch."
                 return
@@ -43,9 +41,9 @@ class CUDAHandler:
                 return
 
     def getFromGPU(self):
-        for i in self.gpu[len(host):]:
-            cuda.memcpy_dtoh(self.out, i)        
-        return self.out
+        for i in xrange(1, self.operands):
+            cuda.memcpy_dtoh(self.host[-i], self.device[-i])        
+        return self.host[self.operands:]
 
     def setKernel(self, kernel_str):
         self.kernel = SourceModule(kernel_str)
