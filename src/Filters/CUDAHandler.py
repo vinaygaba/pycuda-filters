@@ -10,16 +10,16 @@ from pycuda.compiler import SourceModule
 class CUDAHandler:
 
     def __init__(self):
-        self.data_host = []
-        self.data_cuda = []
-        self.data_kernel = []
+        self.host = []
+        self.gpu = []
+        self.out = []
         self.kernel = None
         self.func_name = ""
 
     def _createGPUArray(self, i):
         try:
-            self.data_host.append(np.array(i).astype(np.float32))
-            self.data_cuda.append(cuda.mem_alloc(self.data_host[-1].nbytes))
+            self.host.append(np.array(i).astype(np.float32))
+            self.gpu.append(cuda.mem_alloc(self.host[-1].nbytes))
         except ValueError:
             print "[CUDAHandler Error] Invalid datatype. All of its items mus be floats or integers."
             return
@@ -27,15 +27,25 @@ class CUDAHandler:
             print "[CUDAHandler Error] An error occurred. GPU array could not be create."
             return
 
-    def copyToGPU(self, *input):
-            for i in input:
-                self._createGPUArray(i)            
-                cuda.memcpy_htod(self.data_cuda[-1], self.data_host[-1])
+    def loadData(self, **data):
+            try:
+                for i in data["input"]:
+                   self._createGPUArray(i)            
+                   cuda.memcpy_htod(self.gpu[-1], self.host[-1])
+                for i in data["output"]:
+                   self.gpu.append(cuda.mem_alloc(np.array(i).astype(np.float32).nbytes))
+                   cuda.memcpy_htod(self.gpu[-1], i) 
+            except KeyError:
+                print "[CUDAHandler Error] I/O mismatch."
+                return
+            except:
+                print "[CUDAHandler Error] Input data could not be transfer to GPU."
+                return
 
     def getFromGPU(self):
-        processed_data = np.zeros_like(self.data_host)
-        cuda.memcpy_dtoh(processed_data, self.data_cuda)
-        return processed_data 
+        for i in self.gpu[len(host):]:
+            cuda.memcpy_dtoh(self.out, i)        
+        return self.out
 
     def setKernel(self, kernel_str):
         self.kernel = SourceModule(kernel_str)
