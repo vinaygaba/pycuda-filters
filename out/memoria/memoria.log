@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.2.23)  12 JUL 2011 18:05
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.2.23)  13 JUL 2011 18:57
 entering extended mode
  %&-line parsing enabled.
 **memoria
@@ -307,18 +307,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 53.
-
-Overfull \hbox (112.65671pt too wide) in paragraph at lines 53--53
- [][] 
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 53.
 LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 53.
 
+
 (/usr/share/texmf-texlive/tex/xelatex/euenc/lm/eu1lmtt.fd
 File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
-)
+) [1
+
+] [2]
 File: imgs/block_diagram_Fermi.png Graphic file (type QTm)
 
 <use  "imgs/block_diagram_Fermi.png" > (./code/filter.py
@@ -330,16 +328,14 @@ Overfull \hbox (89.8139pt too wide) in paragraph at lines 60--61
 ][][][][][][][][][][][][][][][] 
  []
 
-) (./memoria.bbl) [1
-
-] [2] (./memoria.aux) ) 
+) (./memoria.bbl) [3] [4] [5] (./memoria.aux) ) 
 Here is how much of TeX's memory you used:
- 6275 strings out of 95791
- 99728 string characters out of 1190541
- 220330 words of memory out of 1500000
- 9297 multiletter control sequences out of 10000+50000
- 8165 words of font info for 42 fonts, out of 1200000 for 2000
+ 6281 strings out of 95791
+ 99831 string characters out of 1190541
+ 223330 words of memory out of 1500000
+ 9300 multiletter control sequences out of 10000+50000
+ 8181 words of font info for 44 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 35i,11n,72p,1154b,1138s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 35i,11n,72p,1196b,1138s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on memoria.pdf (2 pages).
+Output written on memoria.pdf (5 pages).
