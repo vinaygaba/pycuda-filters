@@ -9,23 +9,28 @@ from pycuda.compiler import SourceModule
 
 class CUDAHandler:
 
-    data_host = None
-    data_cuda = None
-    kernel = None
-    func_name = ""
-
     def __init__(self):
-        pass
+        self.data_host = []
+        self.data_cuda = []
+        self.data_kernel = []
+        self.kernel = None
+        self.func_name = ""
 
-    def copyToGPU(self, a):
+    def _createGPUArray(self, i):
         try:
-            self.data_host = np.array(a).astype(np.float32)
+            self.data_host.append(np.array(i).astype(np.float32))
+            self.data_cuda.append(cuda.mem_alloc(self.data_host[-1].nbytes))
         except ValueError:
-            print "[CUDAHandler Error] Invalid datatype: All items must be integer or float"
-            raise
-        else:
-            self.data_cuda = cuda.mem_alloc(self.data_host.nbytes)
-            cuda.memcpy_htod(self.data_cuda, self.data_host)
+            print "[CUDAHandler Error] Invalid datatype. All of its items mus be floats or integers."
+            return
+        except:
+            print "[CUDAHandler Error] An error occurred. GPU array could not be create."
+            return
+
+    def copyToGPU(self, *input):
+            for i in input:
+                self._createGPUArray(i)            
+                cuda.memcpy_htod(self.data_cuda[-1], self.data_host[-1])
 
     def getFromGPU(self):
         processed_data = np.zeros_like(self.data_host)
