@@ -26,6 +26,10 @@ class VideoHandler:
     def getFPS(self):
         return cv.GetCaptureProperty(self.video, cv.CV_CAP_PROP_FPS)
 
+    def getSize(self):
+        """ Tupla compuesta por el ancho y el alto, convertidos a valores enteros """
+        return (int(self.getWidth()), int(self.getHeight()))
+
     def getFrameCount(self):
         # Buggy:
         # return cv.GetCaptureProperty(self.video, cv.CV_CAP_PROP_FRAME_COUNT)
@@ -43,9 +47,8 @@ class VideoHandler:
     def appendFrame(self, frame):
         self.frames.append(frame)
 
-    def saveVideo(self, filename):
-        size = (int(self.getWidth), int(self.getHeight))
-        writer = cv.CreateVideoWriter(filename, cv.CV_FOURCC('M', 'J', 'P', 'G'), self.getFPS(), size, 1)
+    def Save(self, filename):
+        writer = cv.CreateVideoWriter(filename, cv.CV_FOURCC('M', 'J', 'P', 'G'), self.getFPS(), self.getSize(), 1)
         for i in self.frames:
             cv_im = cv.CreateImageHeader(i.size, cv.IPL_DEPTH_8U, 3)
             cv.SetData(cv_im, i.tostring())
