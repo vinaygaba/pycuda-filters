@@ -61,5 +61,6 @@ class CUDAHandler:
     #      - shape del bloque (tupla (x, y, z))
     #      - shape del grid (tupla (x, y))
     # Mirar lo de prepared_call() en vez de get_function()
-    def Launch(self, threads_per_block, nblocks):
+    def Launch(self, blockdim, griddim=None):
         func = self.kernel.get_function(self.func_name)
+        apply(func, self.device, {block:blockdim, grid:griddim})
