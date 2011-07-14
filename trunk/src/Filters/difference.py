@@ -11,4 +11,7 @@ class DifferenceFilter(Filter):
         self.post_img = ImageChops.difference(self.images[0], self.images[1])
 
     def _processCUDA(self):
-        pass
+        cuda.loadData(input=self.images, output=self.post_img)
+        from Kernels.difference_kernel import diffkernel
+        cuda.setKernel(diffkernel)
+        cuda.Launch((4,4,1))

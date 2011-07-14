@@ -3,7 +3,7 @@ import sys
 import Image
 from abc import ABCMeta, abstractmethod
 
-#import CUDAHandler
+from Filters.CUDAHandler import CUDAHandler
 
 # --------------------------------------- #
 
@@ -34,7 +34,7 @@ class Filter:
     def __init__(self, *images):
         for im in images:
             self.images.append(im)
-     #   self.cuda = CUDAHandler()
+        self.cuda = CUDAHandler()
 
         # El diccionario de metodos se inicializa en el constructor ya que
         # daba problemas crearlo directamente en los atributos
