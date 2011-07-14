@@ -60,7 +60,7 @@
 \thispagestyle{empty} % Oculta el número de la primera página
 
 \begin{abstract}
-El aprovechamiento de la capacidad de cómputo de los dispositivos gráficos para resolver problemas computacionalmente complejos está en auge. El alto grado de paralelismo que dichos dispositivos proveen, además de la disponibilidad de kits especializados de desarrollo de software para el público general, abren la puerta a nuevas formas de resolver problemas científicos en una fracción del tiempo que emplearían algoritmos similares basados en CPU. El siguiente paso es encontrar el equilibrio entre la potencia de estos paradigmas de programación y la flexibilidad de los lenguajes modernos. Es aquí donde PyCUDA entra en escena; un "wrapper" de la programación CUDA para Python que ofrece al programador el acceso a la computación de altas prestaciones sobre dispositivos gráficos sin abandonar la comodidad y el dinamismo de este lenguaje (orientación a objetos, tipado dinámico, intérprete interactivo, etc.). Nuestros objetivos se centran, por un lado, en preparar una máquina de prueba equipada con el hardware necesario y, por otro, comprobar las facilidades que promete PyCUDA así como su rendimiento frente a problemas reales.
+El aprovechamiento de la capacidad de cómputo de los dispositivos gráficos para resolver problemas computacionalmente complejos está en auge. El alto grado de paralelismo que dichos dispositivos proveen, además de la disponibilidad de kits especializados de desarrollo de software para el público general, abren la puerta a nuevas formas de resolver problemas científicos en una fracción del tiempo que emplearían algoritmos similares basados en CPU. El siguiente paso es encontrar el equilibrio entre la potencia de estos paradigmas de programación y la flexibilidad de los lenguajes modernos. Es aquí donde PyCUDA \cite{DBLP:journals/corr/abs-0911-3456} entra en escena; un "wrapper" de la programación CUDA para Python que ofrece al programador el acceso a la computación de altas prestaciones sobre dispositivos gráficos sin abandonar la comodidad y el dinamismo de este lenguaje (orientación a objetos, tipado dinámico, intérprete interactivo, etc.). Nuestros objetivos se centran, por un lado, en preparar una máquina de prueba equipada con el hardware necesario y, por otro, comprobar las facilidades que promete PyCUDA así como su rendimiento frente a problemas reales.
 \end{abstract}
 
 %\begin{keywords}
@@ -80,7 +80,7 @@ La capacidad de cómputo de las unidades de procesamiento gráfico (GPU) ha alca
 
 \vspace{5 mm}
 
-NVIDIA \cite{DBLP:conf/csse/YangZP08} es, probablemente, el fabricante especializado que más ha apostado por este enfoque, desarrollando un modelo de programación denominado CUDA (Compute Unified Device Architecture), que permite ejecutar algoritmos en sus GPU. El lenguaje de programación diseñado para ello es una variación de C que contiene extensiones para trabajar con la GPU y ciertas restricciones (no permite recursividad ni punteros a funciones, solo permite números en precisión simple en la mayoría de tarjetas lanzadas al mercado hasta ahora, etc.).
+NVIDIA es, probablemente, el fabricante especializado que más ha apostado por este enfoque, desarrollando un modelo de programación denominado CUDA (Compute Unified Device Architecture), que permite ejecutar algoritmos en sus GPU. El lenguaje de programación diseñado para ello es una variación de C que contiene extensiones para trabajar con la GPU y ciertas restricciones (no permite recursividad ni punteros a funciones, solo permite números en precisión simple en la mayoría de tarjetas lanzadas al mercado hasta ahora, etc.).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -166,11 +166,20 @@ Estas son básicamente librerías matemáticas que requiere gcc para manejar ope
 
 \subsection{pycuda-0.94.2}
 
-El wrapper PyCUDA representa la piedra angular de nuestro trabajo; permite utilizar las primitivas del modelo de programación CUDA (normalmente utilizadas bajo C/C++) en un entorno Python, lo que a su vez ofrece la facilidad y dinamismo de este lenguaje para trabajar con algo bastante tosco como es la programación en C/C++
+El wrapper PyCUDA representa la piedra angular de nuestro trabajo; permite utilizar las primitivas del modelo de programación CUDA (normalmente utilizadas bajo C/C++) en un entorno Python, lo que a su vez ofrece la facilidad y dinamismo de este lenguaje para trabajar con algo bastante tosco como es la programación en C + extensiones CUDA. La instalación de PyCUDA se ejecuta con un sencillo cuidado, teniendo en cuenta que hay que especificarle la ruta de instalacion de la SDK de CUDA. Si este directorio es, por ejemplo, \emph{/usr/local/cuda}, los comandos serán como sigue:
 
-\subsubsection{boost-1.46.1}
+\begin{verbatim}
+$ python configure.py --cuda-root=/usr/local/cuda
+$ su -c "make install"
+\end{verbatim}
 
 \subsection{PIL-1.1.7}
+
+PIL (Python Imaging Library) es la librería \emph{de facto} en Python para el tratamiento de imágenes. A través de una sencilla interfaz da al programador la posibilidad de cargar y guardar imágenes en multitud de formatos, acceder a los datos y propiedades de una imagen dada e incluso aplicar ciertos filtros y tratamientos que ya proporciona esta librería de manera nativa. Su instalación es de las pocas que puede realizarse sin problema a través del gestor de paquetes de CentOS, ya que la versión 1.1.7 que nos ocupa hace ya tiempo que es pública y por tanto puede considerarse estable, por lo que este proceso se resume en: 
+
+\begin{verbatim}
+$ sudo yum install python-imaging
+\end{verbatim}
 
 \subsection{OpenCV-2.2.0}
 
@@ -182,7 +191,8 @@ Por lo demás, es bastante integrable además con PIL y NumPy, por lo que facili
 
 \begin{verbatim}
 $ cd /opt/opencv/release
-$ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -D USE_CUDA=ON ..
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local
+        -D BUILD_PYTHON_SUPPORT=ON -D USE_CUDA=ON ..
 \end{verbatim}
 
 De forma que se compile con el soporte para Python y el uso de CUDA (aunque, como ya se indicó, no tiene efecto en el momento de la escritura de esta memoria debido a que no está portada aún la librería que hace uso de la GPU para los algoritmos y funciones internas de OpenCV)
@@ -269,7 +279,7 @@ Todo esto desde el punto de vista del programador consiste en la extensión del 
 
 \subsection{Primeras pruebas}
 
-Durante el tiempo que hemos trabajado con PyCUDA en el último cuatrimestre, hemos implementado varios algoritmos de diferente complejidad. Inicialmente, nuestro objetivo consistió en familiarizarnos tanto con el entorno de trabajo como con una arquitectura que no habíamos empleado hasta ahora. Para ello, comenzamos escribiendo kernels que ejecutaban tareas sencillas tales como multiplicar un escalar por un vector, sumar dos vectores, etc. Este tipo de aplicaciones, aún cuando resultaron más eficientes ejecutados sobre la CPU que sobre la GPU en las mayoría de las pruebas --la gráfica solo alcanzaba mayor velocidad a partir de los 10.000 elementos-- , nos permitieron comprender la importancia de indicar el número adecuado de hilos por bloque o el tamaño del grid correcto tanto para acelerar el propio cálculo como para evitar los accesos no coalescentes a memoria. Huelga decir que en el caso anterior, la menor velocidad de la GPU se debe al tiempo empleado en la transferencia de datos de la memoria principal a la memoria del dispositivo y no al cómputo en sí.
+Durante el tiempo que hemos trabajado con PyCUDA en el último cuatrimestre, hemos implementado varios algoritmos de diferente complejidad. Inicialmente, nuestro objetivo consistió en familiarizarnos tanto con el entorno de trabajo como con una arquitectura que no habíamos empleado hasta ahora. Para ello, comenzamos escribiendo kernels que ejecutaban tareas sencillas tales como multiplicar un escalar por un vector, sumar dos vectores, etc. Este tipo de aplicaciones, aún cuando resultaron más eficientes ejecutados sobre la CPU que sobre la GPU en las mayoría de las pruebas --la gráfica solo alcanzaba mayor velocidad a partir de los 10.000 elementos-- , nos permitieron comprender la importancia de indicar el número adecuado de hilos por bloque o el tamaño del grid correcto tanto para acelerar el propio cálculo como para evitar los accesos no coalescentes a memoria \cite{cbestpractices}. Huelga decir que en el caso anterior, la menor velocidad de la GPU se debe al tiempo empleado en la transferencia de datos de la memoria principal a la memoria del dispositivo y no al cómputo en sí.
 
 \vspace{5 mm}
 
@@ -286,19 +296,26 @@ En cuanto al filtro de imagen, nos decantamos por una implementación sencilla d
 
 \subsection{Desarrollo del paquete \emph{Filters}}
 
-Una vez que conocimos las posibilidades de la estructura CUDA, buscamos algún algoritmo que conllevase un esfuerzo computacional notable para poner a prueba lo aprendido. Consideramos inicialmente el ransac, pero no resultaba fácilmente acomodable al cómputo paralelo, ya que requería estructuras de datos complejas y contemplaba múltiples dependencias entre ellas.
+Una vez que conocimos las posibilidades de la estructura CUDA, buscamos algún algoritmo que conllevase un esfuerzo computacional notable para poner a prueba lo aprendido. Consideramos inicialmente el RANSAC \cite{Jiayin:2010:CMD:1933304.1933936}, pero no resultaba fácilmente acomodable al cómputo paralelo, ya que requería estructuras de datos complejas y contemplaba múltiples dependencias entre ellas.
 
 \vspace{5 mm}
 
-Finalmente, escogimos como objetivo de desarrollo el diseño e implementación de un paquete que permita aplicar diferentes filtros a una imagen, a un conjunto de imágenes o a un vídeo, en cuyo caso será descompuesto en sus correspondientes frames. Este paquete puede utilizarse para acelerar el cálculo de aplicaciones complejas que requieran de la aplicación de filtros. En concreto, una de las más interesantes que hemos adaptado consiste en un programa de detección de movimiento.
+Finalmente, escogimos como objetivo de desarrollo el diseño e implementación de un paquete que permita aplicar diferentes filtros a una imagen, a un conjunto de imágenes o a un vídeo, en cuyo caso será descompuesto en sus correspondientes frames. Este paquete puede utilizarse para acelerar el cálculo de aplicaciones complejas que requieran de la aplicación de filtros \cite{DBLP:conf/csse/YangZP08}. En concreto, una de las más interesantes que hemos adaptado consiste en un programa de detección de movimiento.
 
 \vspace{5 mm}
 
 El paquete Filters se estructura, esencialmente, en torno a dos clases: CUDAHandler, concebido para comunicarse con la GPU, y Filter, clase abstracta de la que heredan cada uno de los filtros implementados. En la imagen adjunta, pueden observarse tres clases hijas de Filter que contienen las instrucciones para gestionar tres filtros necesarios para la detección de movimiento (Difference, Threshold y Erosion). Además, también se contempla una clase MotionDetector, encargada de realizar la detección en sí y que hace uso del paquete Filters, además de la clase VideoHandler que la abstrae de la manipulación de las operaciones de gestión de vídeo.
 
+\begin{figure}
+   \begin{center}
+      \includegraphics[width=.8\textwidth]{UML.png}
+      \caption{\label{fig:UML}Jerarquía de clases del detector de movimiento}
+   \end{center}
+\end{figure}
+
 \subsection{Algoritmo de Detección de Movimiento}
 
-El algoritmo de detección de movimiento más simple se basa en la aplicación de una secuencia de filtros sobre los frames (imágenes) del vídeo.
+El algoritmo de detección de movimiento más simple se basa en la aplicación de una secuencia de filtros sobre los frames (imágenes) del vídeo \cite{codeproject}.
 
 Para entender el proceso basta con escoger 2 frames consecutivos del vídeo y aplicar los siguientes pasos:
 
@@ -312,44 +329,94 @@ Para entender el proceso basta con escoger 2 frames consecutivos del vídeo y ap
 
 Finalmente este proceso se realiza iterativamente sobre cada dupla de frames del vídeo para obtener la secuencia de frames con el resultado de la detección de movimiento. 
 
-Una vez obtenidos las 2 imágenes en escala de grises similar a la figura \ref{} aplicamos el primer filtro.
+Una vez obtenidos las 2 imágenes en escala de grises similar a la figura \ref{fig:original_grayscale} aplicamos el primer filtro:
 
 \begin{figure}
    \begin{center}
-      \includegraphics[width=.9\textwidth]{cpu-gpu.png}
-      \caption{\label{fig:cpu-gpu}Eficiencia de cómputo: Producto matricial de NxN con algoritmo clásico O(n$^{3}$) frente a algoritmo paralelo sobre GPU}
+      \includegraphics[width=.8\textwidth]{motion_detection/original_grayscale.jpg}
+      \caption{\label{fig:original_grayscale}Frame original en escala de grises}
    \end{center}
 \end{figure}
 
-Insertar imagen original_grayscale.jpg (Figura 4)
-   Filtro de Diferencia: este filtro consiste en la resta de cada pixel en valor absoluto (restando canal a canal en caso de imágenes de varios canales) de las dos imágenes. Con esto obtenemos las zonas donde se ha producido movimiento, como se puede ver en la figura 5.
+\textbf{Filtro de Diferencia:} Este filtro consiste en el valor absoluto de la resta de cada píxel (restando canal a canal en caso de imágenes de varios canales) de las dos imágenes. Con esto obtenemos las zonas donde se ha producido movimiento, como se puede observar en la figura \ref{fig:diff_filter}.
 
-Insertar imagen diff_filter.jpg (Figura 5)
+\begin{figure}
+   \begin{center}
+      \includegraphics[width=.8\textwidth]{motion_detection/diff_filter.png}
+      \caption{\label{fig:diff_filter}Tras la aplicación del filtro de diferencia}
+   \end{center}
+\end{figure}
 
-Filtro Threshold: la finalidad de este filtro es obtener una imagen binaria donde solo aparecen pixeles blancos o negros, este filtro se compara cada pixel con un umbral, si el valor del pixel esta por debajo se asigna el valor 0 (negro) y si esta por encima del umbral se asigna el valor 255 (blanco). Asi pues, la imagen resultante quedaría como la figura 6, donde ademas se aprecia la aparición de ruido a simple vista.
+\textbf{Filtro Threshold:} La finalidad de este filtro es obtener una imagen binaria donde solo aparecen píxeles blancos o negros. Este filtro compara cada píxel con un umbral, y si el valor del píxel está por debajo se asigna el valor 0 (negro), en caso contrario (por encima del umbral) se asigna el valor 255 (blanco). Así pues, la imagen resultante quedaría como la figura \ref{fig:threshold_filter}, donde además se aprecia la aparición de ruido a simple vista.
 
-Insertar imagen threshold_filter.jpg (Figura 6)
+\begin{figure}
+   \begin{center}
+      \includegraphics[width=.8\textwidth]{motion_detection/threshold_filter.png}
+      \caption{\label{fig:threshold_filter}Tras la aplicación del filtro threshold}
+   \end{center}
+\end{figure}
 
-Filtro de Erosión: contenido dentro los llamados Filtros Morfológicos este filtro de termina si un pixel se mantiene (se define como blanco) o se elimina (se define como negro). Para determinar esto se hace uso de una mascara (definida a conveniencia) que determina los pixeles vecinos a examinar, desde que alguno de estos vecinos no exista se elimina el pixel analizado (and lógico), por el contrario si todos los pixeles vecinos existen el pixel analizado tendra que existir. En el algoritmo el objetivo de aplicar este filtro es eliminar el ruido expuesto por el filtro anterior, como se puede apreciar en la figura  7.
+\textbf{Filtro de Erosión:} Contenido dentro los llamados Filtros Morfológicos, este filtro determina si un píxel se mantiene (se define como blanco) o se elimina (se define como negro). Para sopesar esta decisión se hace uso de una máscara (definida a conveniencia) que determina los píxeles vecinos a examinar; desde que al menos uno de estos vecinos esté en negro, se elimina el píxel analizado (operación \emph{and} lógica. Por el contrario, si todos los píxeles vecinos existen el píxel analizado permanecerá en blanco. El objetivo de aplicar este filtro es eliminar el ruido expuesto por el filtro anterior, como se puede apreciar en la figura \ref{fig:erosion_filter}.
 
-Insertar imagen erosion_filter.jpg (Figura 7)
+\begin{figure}
+   \begin{center}
+      \includegraphics[width=.8\textwidth]{motion_detection/erosion_filter.png}
+      \caption{\label{fig:erosion_filter}Tras la aplicación del filtro de erosión}
+   \end{center}
+\end{figure}
 
-Por último  queda realizar el fundido en el canal R de la imagen original con la imagen resultante de aplicar el filtro de erosión, este fundido no es mas que una suma de pixel a pixel, obteniendo asi el resultado final de la figura 8.
+Por último, queda realizar el fundido en el canal R de la imagen original con la imagen resultante de aplicar el filtro de erosión. Este fundido no es más que una suma de píxel a píxel, obteniendo así el resultado final de la figura \ref{fig:result}.
+ 
+\begin{figure}
+   \begin{center}
+      \includegraphics[width=.8\textwidth]{motion_detection/result.png}
+      \caption{\label{fig:result}Resultado final}
+   \end{center}
+\end{figure}
 
-Insertar imagen result.jpg (Figura 8).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-y un código \ref{code:filter}
-
-\lstinputlisting[%
-   float=t,
-   caption={Codigo de filtros en Python},
-   label={code:filter} 
-   ]%
-   {code/filter.py}
 
 \bibliographystyle{Jornadas}
 \bibliography{memoria}
+
+\section{Anexo: Códigos desarrollados}
+
+\lstinputlisting[%
+   float=t,
+   caption={Clase CUDAHandler},
+   label={code:Filters/CUDAHandler} 
+   ]%
+   {code/Filters/CUDAHandler.py}
+\lstinputlisting[%
+   float=t,
+   caption={Clase padre abstracta Filter},
+   label={code:Filters/filter} 
+   ]%
+   {code/Filters/filter.py}
+\lstinputlisting[%
+   float=t,
+   caption={Filtro de diferencia},
+   label={code:Filters/difference}
+   ]%
+   {code/Filters/difference.py}
+\lstinputlisting[%
+   float=t,
+   caption={Filtro de erosión},
+   label={code:Filters/erosion}
+   ]%
+   {code/Filters/erosion.py}
+\lstinputlisting[%
+   float=t,
+   caption={Clase VideoHandler},
+   label={code:videoHandler}
+   ]%
+   {code/videoHandler.py}
+\lstinputlisting[%
+   float=t,
+   caption={Clase MotionDetector},
+   label={code:motionDetector}
+   ]%
+   {code/motionDetector.py}
 
 \end{document}
 

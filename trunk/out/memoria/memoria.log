@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.7.13)  14 JUL 2011 05:41
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.7.13)  14 JUL 2011 07:26
 entering extended mode
  %&-line parsing enabled.
 **memoria
@@ -265,27 +265,125 @@ LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 55.
 File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
 ) [1
 
-]
-
-LaTeX Warning: Citation `DBLP:conf/csse/YangZP08' on page 2 undefined on input 
-line 83.
-
-[2] [3]
-Overfull \hbox (159.45865pt too wide) in paragraph at lines 186--186
-[]\EU1/lmtt/m/n/10 $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=
-/usr/local -D BUILD_PYTHON_SUPPORT=ON -D USE_CUDA=ON ..[] 
- []
-
-[4]
+] [2] [3] [4]
 File: imgs/ThreadHierarchy.png Graphic file (type QTm)
- <use  "imgs/ThreadHierarchy.png" >
+
+<use  "imgs/ThreadHierarchy.png" > [5]
 File: imgs/MemoriaHierarchy.png Graphic file (type QTm)
  <use  "imgs/MemoriaHierarchy.png" >
-[5]
-
-LaTeX Warning: Reference `fig:EscaladoGPU' on page 6 undefined on input line 24
-0.
-
 File: imgs/EscaladoGPU.png Graphic file (type QTm)
-<use  "imgs/EscaladoGPU.png" >
-LaTeX Font Info:    External fon
+
+<use  "imgs/EscaladoGPU.png" > [6]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 262.
+
+Overfull \hbox (20.92867pt too wide) in paragraph at lines 262--276
+ [] 
+ []
+
+[7]
+File: imgs/cpu-gpu.png Graphic file (type QTm)
+ <use  "imgs/cpu-gpu.png" >
+File: imgs/UML.png Graphic file (type QTm)
+ <use  "imgs/UML.png" >
+Underfull \vbox (badness 5490) has occurred while \output is active []
+
+ [8]
+File: imgs/motion_detection/original_grayscale.jpg Graphic file (type QTm)
+
+<use  "imgs/motion_detection/original_grayscale.jpg" >
+File: imgs/motion_detection/diff_filter.png Graphic file (type QTm)
+
+<use  "imgs/motion_detection/diff_filter.png" >
+File: imgs/motion_detection/threshold_filter.png Graphic file (type QTm)
+
+<use  "imgs/motion_detection/threshold_filter.png" >
+File: imgs/motion_detection/erosion_filter.png Graphic file (type QTm)
+
+<use  "imgs/motion_detection/erosion_filter.png" >
+File: imgs/motion_detection/result.png Graphic file (type QTm)
+
+<use  "imgs/motion_detection/result.png" > (./memoria.bbl [9] [10] [11])
+(./code/Filters/CUDAHandler.py) (./code/Filters/filter.py)
+(./code/Filters/difference.py) (./code/Filters/erosion.py
+Overfull \hbox (140.21442pt too wide) in paragraph at lines 37--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (165.41467pt too wide) in paragraph at lines 42--44
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.81326pt too wide) in paragraph at lines 73--74
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Overfull \hbox (35.21335pt too wide) in paragraph at lines 75--76
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.21313pt too wide) in paragraph at lines 76--77
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (60.4136pt too wide) in paragraph at lines 77--78
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.41339pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (18.41318pt too wide) in paragraph at lines 80--81
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+
+LaTeX Warning: Float too large for page by 40.63863pt on input line 407.
+
+(./code/videoHandler.py
+Overfull \hbox (56.21356pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./code/motionDetector.py
+Overfull \hbox (98.21399pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+) [12] [13] [14] [15] [16] [17] [18] (./memoria.aux) ) 
+Here is how much of TeX's memory you used:
+ 6665 strings out of 495724
+ 106322 string characters out of 1189346
+ 470581 words of memory out of 3000000
+ 9700 multiletter control sequences out of 15000+50000
+ 6520 words of font info for 41 fonts, out of 3000000 for 9000
+ 32 hyphenation exceptions out of 8191
+ 40i,11n,72p,1222b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on memoria.pdf (18 pages).
