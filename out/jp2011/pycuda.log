@@ -1,38 +1,12 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.5.3)  30 JUN 2011 12:26
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.3.15)  19 JUL 2011 22:00
 entering extended mode
  %&-line parsing enabled.
 **pycuda
 (./pycuda.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
 (./Jornadas.cls
-Invalid UTF-8 byte or sequence at line 7 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 7 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 9 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 17 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 21 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 21 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 27 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 31 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 31 replaced by U+FFFD.
-
 Hoha de estilo `IEEEtran' <30-Agosto-1993>.
 Actualizada a `IEEEtran.cls' <10-Enero-1996>.
 Rev. <15-Mayo-1996>.
@@ -43,7 +17,7 @@ Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
 (/usr/share/texmf-texlive/tex/latex/tools/somedefs.sty
 Package: somedefs 1994/06/01 v0.03 Toolkit for optional definitions
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 45.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 44.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -53,7 +27,7 @@ Package: oldlfont 1994/11/29 v2.2k Standard LaTeX package
 
 (/usr/share/texmf-texlive/tex/latex/base/tracefnt.sty
 Package: tracefnt 1997/05/29 v3.0j Standard LaTeX package (font tracing)
-\tracingfonts=\count80
+\tracingfonts=\count79
 LaTeX Info: Redefining \selectfont on input line 101.
 )
 \symbold=\mathgroup4
@@ -75,152 +49,186 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 ))
 (/usr/share/texmf-texlive/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 -- This is a 10 point document
 \tmpitemindent=\dimen102
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
 \captionindent=\skip41
-\c@figure=\count85
-\c@table=\count86
+\c@figure=\count84
+\c@table=\count85
 ) (/usr/share/texmf-texlive/tex/xelatex/fontspec/fontspec.sty
-Package: fontspec 2008/08/09 v1.18 Advanced font selection for XeLaTeX
+Package: fontspec 2006/12/24 v1.13 Advanced font selection for XeLaTeX
 
 (/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+Package: ifxetex 2006/08/21 v0.3 Provides ifxetex conditional
 )
-\c@zf@newff=\count87
-\c@zf@index=\count88
-\c@zf@script=\count89
-\c@zf@language=\count90
+\c@zf@newff=\count86
+\c@zf@index=\count87
+\c@zf@script=\count88
+\c@zf@language=\count89
 
 (/usr/share/texmf-texlive/tex/latex/tools/calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count91
-\calc@Bcount=\count92
+Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count90
+\calc@Bcount=\count91
 \calc@Adimen=\dimen103
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip42
 \calc@Bskip=\skip43
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count93
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count92
 \calc@Cskip=\skip44
 )
 (/usr/share/texmf-texlive/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+Package: xkeyval 2006/11/18 v2.5f package option processing (HA)
 
-(/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-texlive/tex/latex/xkeyval/xkeyval.tex
 \XKV@toks=\toks14
-\XKV@tempa@toks=\toks15
-\XKV@depth=\count94
-File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+\XKV@depth=\count93
+File: xkeyval.tex 2006/11/18 v2.5f key=value parser (HA)
 
-(/usr/share/texmf-texlive/tex/generic/xkeyval/keyval.tex)))
+(/usr/share/texmf-texlive/tex/latex/xkeyval/keyval.tex)))
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2007/01/14 v1.3 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 13.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 14.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 15.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 16.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 17.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 18.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 19.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 20.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 24.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 25.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/bx/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/bx/it on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 29.
+)
 (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texmf-texlive/tex/xelatex/euenc/eu1enc.def
-File: eu1enc.def 2008/03/08 v0.1d Experimental unicode font encoding
+File: eu1enc.def 2006/08/13 v0.1a Experimental unicode font encoding
 )
 LaTeX Font Info:    Try loading font information for EU1+lmr on input line 100.
 
 
-(/usr/share/texmf-texlive/tex/xelatex/euenc/eu1lmr.fd
+(/usr/share/texmf-texlive/tex/xelatex/euenc/lm/eu1lmr.fd
 File: eu1lmr.fd 2007/01/14 v1.3 Font defs for Latin Modern
 ))
-LaTeX Info: Redefining \itshape on input line 1163.
-LaTeX Info: Redefining \slshape on input line 1166.
-LaTeX Info: Redefining \scshape on input line 1169.
-LaTeX Info: Redefining \upshape on input line 1172.
+LaTeX Info: Redefining \itshape on input line 1050.
+LaTeX Info: Redefining \slshape on input line 1053.
+LaTeX Info: Redefining \scshape on input line 1056.
+LaTeX Info: Redefining \upshape on input line 1059.
 
 fontspec.cfg loaded.
 (/usr/share/texmf-texlive/tex/xelatex/fontspec/fontspec.cfg))
 (/usr/share/texmf-texlive/tex/xelatex/xunicode/xunicode.sty
-File: xunicode.sty 2008/02/08 v0.91 provides access to latin accents and many o
-ther characters in Unicode lower plane
+File: xunicode.sty 2005/02/26 v0.5 provides access to latin accents and many ot
+her characters in Unicode lower plane
 )
 (/usr/share/texmf-texlive/tex/xelatex/xltxtra/xltxtra.sty
-Package: xltxtra 2009/09/02 v0.5 Improvements for the "XeLaTeX" format
-
-(/usr/share/texmf-texlive/tex/latex/metalogo/metalogo.sty
-Package: metalogo 2009/09/04 v0.11 Extended TeX logo macros
+Package: xltxtra 2006/06/13 v0.2 Improvements for the XeTeX/LaTeX format
 
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: xetex.def on input line 91.
+Package graphics Info: Driver file: xetex.def on input line 90.
 
-(/usr/share/texmf-texlive/tex/xelatex/xetex-def/xetex.def
-File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
-
+(/usr/share/texmf-texlive/tex/xelatex/graphics/xetex.def
+File: xetex.def 2006/08/10 v0.92 LaTeX color/graphics driver for XeTeX (RRM, mo
+d. JK)
 ))
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
 )
-\xl@everylogo=\toks16
-\xl@@everylogo=\toks17
-LaTeX Info: Redefining \TeX on input line 193.
-LaTeX Info: Redefining \LaTeX on input line 202.
-LaTeX Info: Redefining \LaTeXe on input line 219.
-)
-(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
+\xxt@kern@Te=\skip45
+\xxt@kern@eX=\skip46
+\xxt@lower@e=\skip47
+\xxt@kern@La=\skip48
+\xxt@kern@aT=\skip49
+\xxt@kern@eL=\skip50
+LaTeX Info: Redefining \TeX on input line 36.
+LaTeX Info: Redefining \LaTeX on input line 42.
+
+(/usr/share/texmf-texlive/tex/latex/etex/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count95
+\et@xins=\count94
 )
 (/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+Package: fixltx2e 2006/03/24 v1.1n fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 )
-LaTeX Info: Redefining \em on input line 72.
-LaTeX Info: Redefining \emph on input line 81.
-LaTeX Info: Redefining \- on input line 86.
-LaTeX Info: Redefining \textsubscript on input line 105.
-LaTeX Info: Redefining \textsuperscript on input line 107.
-\xxt@tempbox=\box26
+LaTeX Info: Redefining \em on input line 101.
+LaTeX Info: Redefining \emph on input line 110.
+LaTeX Info: Redefining \- on input line 115.
+LaTeX Info: Redefining \textsubscript on input line 125.
+LaTeX Info: Redefining \textsuperscript on input line 154.
 )
-(/usr/local/share/texmf/tex/latex/listings/listings.sty
-Package: listings 2002/04/01 1.0 (Carsten Heinz)
-\lst@mode=\count96
-\lst@gtempboxa=\box27
-\lst@token=\toks18
-\lst@length=\count97
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count95
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count96
 \lst@currlwidth=\dimen107
-\lst@column=\count98
-\lst@pos=\count99
+\lst@column=\count97
+\lst@pos=\count98
 \lst@lostspace=\dimen108
 \lst@width=\dimen109
-\lst@newlines=\count100
-\lst@lineno=\count101
-\c@lstlisting=\count102
-\abovecaptionskip=\skip45
-\belowcaptionskip=\skip46
+\lst@newlines=\count99
+\lst@lineno=\count100
+\c@lstlisting=\count101
+\abovecaptionskip=\skip51
+\belowcaptionskip=\skip52
 \lst@maxwidth=\dimen110
 
-(/usr/local/share/texmf/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2002/06/17 1.0d (Carsten Heinz)
+(/usr/share/texmf-texlive/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
 )
-(/usr/local/share/texmf/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2002/04/01 1.0 (Carsten Heinz)
-\c@lstnumber=\count103
-\lst@skipnumbers=\count104
-\lst@framebox=\box28
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box27
 )
-(/usr/local/share/texmf/tex/latex/listings/listings.cfg
-File: listings.cfg 2002/04/01 v1.0 listings configuration
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2004/09/05 1.3 listings configuration
 ))
+Package: listings 2004/10/17 1.3b (Carsten Heinz)
+
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -229,8 +237,8 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: xetex.def on input line 130.
 )
-(/usr/local/share/texmf/tex/latex/listings/lstlang1.sty
-File: lstlang1 2002/06/17 v1.0b listings language file
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (./pycuda.aux)
 \openout1 = `pycuda.aux'.
 
@@ -248,8 +256,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
-Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid this).
- on input line 38.
 \symlegacymaths=\mathgroup11
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
 (Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 38.
@@ -280,51 +286,89 @@ LaTeX Font Info:    Redeclaring symbol font `operators' on input line 38.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
 (Font)              `operators' in the math version `normal' on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 38.
+(Font)                  OT1/lmr/m/n --> EU1/lmr/m/n on input line 38.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
 (Font)              `operators' in the math version `bold' on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 38.
+(Font)                  OT1/lmr/bx/n --> EU1/lmr/m/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 38.
+(Font)                  OT1/lmr/m/it --> EU1/lmr/m/it on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 38.
+(Font)                  OT1/lmr/bx/n --> EU1/lmr/bx/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 38.
+(Font)                  OT1/lmss/m/n --> EU1/lmss/m/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 38.
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/m/n on input line 38.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/m/it --> EU1/lmr/bx/it on input line 38.
+(Font)                  OT1/lmr/bx/it --> EU1/lmr/bx/it on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/bx/n on input line 38.
+(Font)                  OT1/lmss/bx/n --> EU1/lmss/bx/n on input line 38.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/bx/n on input line 38.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 52.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 52.
+
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 52.
+
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 52.
-LaTeX Font Info:    External font `cmex10' loaded for size
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 52.
-LaTeX Font Info:    External font `cmex10' loaded for size
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 52.
-LaTeX Font Info:    External font `cmex10' loaded for size
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 52.
 LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 52.
 
 
-(/usr/share/texmf-texlive/tex/xelatex/euenc/eu1lmtt.fd
+(/usr/share/texmf-texlive/tex/xelatex/euenc/lm/eu1lmtt.fd
 File: eu1lmtt.fd 2007/01/14 v1.3 Font defs for Latin Modern
 )
 File: imgs/block_diagram_Fermi.png Graphic file (type QTm)
 
-<use  "imgs/block_diagram_Fermi.png" > (./code/filter.py
-LaTeX Font Info:    External font `cmex10' loaded for size
+<use  "imgs/block_diagram_Fermi.png" >
+! Argument of \lst@title@dropdelim has an extra }.
+<inserted text> 
+                \par 
+l.105    {code/filter.py}
+                         
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105    {code/filter.py}
+                         
+? H
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+? 
+(./code/filter.py
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 7.
 
 Overfull \hbox (91.5812pt too wide) in paragraph at lines 13--14
@@ -334,50 +378,54 @@ Overfull \hbox (91.5812pt too wide) in paragraph at lines 13--14
 
 
 Overfull \hbox (3.38031pt too wide) in paragraph at lines 50--52
-[][][][][][][][][][][][][] 
+[][][][][][][][][][][][][][] 
  []
 
 
 Overfull \hbox (87.38116pt too wide) in paragraph at lines 54--55
-[][][][][][][][][][][][][][][][] 
+[][][][][][][][][][][][][][][][][] 
  []
 
 
 Overfull \hbox (141.98172pt too wide) in paragraph at lines 57--58
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][] 
  []
 
 
 Overfull \hbox (158.78189pt too wide) in paragraph at lines 58--59
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][] 
+[][][][][][][][] 
  []
 
 
 Overfull \hbox (288.98322pt too wide) in paragraph at lines 60--61
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][] 
+][][][][][][][][][][][][][][][] 
  []
 
 
 Overfull \hbox (28.58057pt too wide) in paragraph at lines 68--69
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][] 
+][][][][][][][][][][][][] 
  []
 
 ) (./pycuda.bbl) [1
 
 
-] (./pycuda.aux) ) 
-Here is how much of TeX's memory you used:
- 6564 strings out of 494665
- 103603 string characters out of 1166478
- 226276 words of memory out of 3000000
- 9688 multiletter control sequences out of 15000+50000
- 25806 words of font info for 107 fonts, out of 3000000 for 9000
- 669 hyphenation exceptions out of 8191
- 40i,7n,72p,449b,750s stack positions out of 5000i,500n,10000p,200000b,50000s
+] [2
 
-Output written on pycuda.pdf (1 page).
+] (./pycuda.aux) )
+(\end occurred when \iftrue on line 105 was incomplete) 
+Here is how much of TeX's memory you used:
+ 6501 strings out of 95791
+ 102339 string characters out of 1190541
+ 253334 words of memory out of 1500000
+ 9473 multiletter control sequences out of 10000+50000
+ 29329 words of font info for 119 fonts, out of 1200000 for 2000
+ 28 hyphenation exceptions out of 8191
+ 35i,7n,72p,434b,1133s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on pycuda.pdf (2 pages).
