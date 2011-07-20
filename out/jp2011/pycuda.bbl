@@ -7,4 +7,13 @@ Andreas Kl{\"o}ckner, Nicolas Pinto, Yunsup Lee, Bryan~C. Catanzaro, Paul
   computing,''
 \newblock {\em CoRR}, vol. abs/0911.3456, 2009.
 
+\bibitem{opencl}
+{Khronos Group},
+\newblock ``{OpenCL - The open standard for parallel programming of
+  heterogeneous systems},'' 2011.
+
+\bibitem{aboutcuda}
+{NVIDIA Corp.},
+\newblock ``{What is CUDA - NVIDIA Developer Zone},'' 2011.
+
 \end{thebibliography}
