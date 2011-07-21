@@ -59,7 +59,7 @@
 \thispagestyle{empty} % Oculta el número de la primera página
 
 \begin{abstract}
-La computación paralela no ha cesado de explorar nuevos horizontes con el objetivo de obtener mejoras tangibles de rendimiento en la ejecución de algoritmos de toda clase. Si bien durante muchos años se ha seguido el camino tradicional de innovar en la arquitectura de las CPU y crear software que aproveche esos beneficios, la consolidación de la que están disfrutando en la última década los dispositivos gráficos como hardware de cómputo general es difícil de ignorar. Este cambio de paradigma trae consigo nuevas formas de programar, nuevas herramientas y por supuesto, nuevos desafíos. El hecho de que el lenguaje C y sus derivados sean la \emph{lingua franca} de este tipo de programación no debería sorprender a propios ni a extraños, pero otros lenguajes se van haciendo hueco poco a poco: es el caso de Python, que gracias al \emph{wrapper} PyCUDA \cite{DBLP:journals/corr/abs-0911-3456} es capaz de ofrecer al programador el acceso a la computación de altas prestaciones sobre dispositivos gráficos sin renunciar a la comodidad y el dinamismo de este lenguaje. El propósito de este artículo es comprobar las facilidades que promete PyCUDA así como su rendimiento frente a problemas reales.
+La computación paralela no ha cesado de explorar nuevos horizontes con el objetivo de obtener mejoras tangibles de rendimiento en la ejecución de algoritmos de toda clase. Si bien durante muchos años se ha seguido el camino de innovar en la arquitectura de las CPU y crear software que se aproveche de esos beneficios, la consolidación de la que vienen disfrutando en la última década los dispositivos gráficos como hardware de cómputo general es difícil de ignorar. Este cambio de paradigma trae consigo nuevas formas de programar, nuevas herramientas y por supuesto, nuevos desafíos. El hecho de que el lenguaje C y sus derivados sean la \emph{lingua franca} de este tipo de programación no debería sorprender a propios ni a extraños, pero otros lenguajes se van haciendo hueco poco a poco. Es el caso de Python, que gracias al \emph{wrapper} PyCUDA \cite{DBLP:journals/corr/abs-0911-3456} es capaz de ofrecer al programador acceso a la computación de altas prestaciones sobre dispositivos gráficos sin renunciar a la comodidad y dinamismo de este lenguaje. El propósito de este artículo es comprobar las facilidades que promete PyCUDA así como su rendimiento frente a problemas reales.
 \end{abstract}
 
 \begin{keywords}
@@ -68,11 +68,11 @@ Python, CUDA, PyCUDA, PyCUBLAS
 
 \section{Introducción}
 
-La capacidad de cómputo de las unidades de procesamiento gráfico (GPU) ha alcanzado en los últimos años un desarrollo notable que ha crecido de manera paralela a un fuerte incremento en la producción y demanda de dispositivos que las integran, tales como smartphones, tablets, etc., además de seguir presentes en tarjetas gráficas o placas base con cada vez más relevancia. Precisamente, dicho aumento de potencia ha comenzado a hacer atractivo su empleo para la manipulación de cantidades masivas de datos en ámbitos ajenos al del video tales como criptología, biología computacional, cálculo científico etc., que, por su naturaleza paralela, son susceptibles de ejecutarse con más eficiencia, incluso, que en una CPU tradicional. Esta técnica de usar la GPU en aplicaciones que tradicionalmente se habían ejecutado en CPU recibe el nombre de GPGPU (General-purpose computing on graphics processing units).
+La capacidad de cómputo de las unidades de procesamiento gráfico (GPU) ha alcanzado en los últimos años un desarrollo notable, que ha crecido de manera paralela a un fuerte incremento en la producción y demanda de dispositivos que las integran, tales como smartphones, tablets, etc., además de seguir presentes en tarjetas gráficas o placas base con cada vez más relevancia. Precisamente, dicho aumento de potencia ha comenzado a hacer atractivo su empleo para la manipulación de cantidades masivas de datos en ámbitos ajenos al del video tales como criptología, biología computacional, cálculo científico etc., que, por su naturaleza paralela, son susceptibles de ejecutarse con más eficiencia, incluso, que en una CPU tradicional. Esta técnica de usar la GPU en aplicaciones que tradicionalmente se habían ejecutado en CPU recibe el nombre de GPGPU (General-purpose computing on graphics processing units).
 
 \vspace{5 mm}
 
-A pesar de que existen diversos fabricantes especializados en dispositivos gráficos que ofrecen algún tipo de \emph{framework} para desarrollo de aplicaciones paralelas sobre GPGPU, e incluso alternativas más generales como OpenCL \cite{opencl}, NVIDIA es probablemente el fabricante especializado que más ha apostado por este enfoque. Prácticamente desde los albores de la computación de este tipo, han ido desarrollando un modelo de programación denominado CUDA (Compute Unified Device Architecture) \cite{aboutcuda}, que permite al programador ejecutar algoritmos casi arbitrarios en sus GPU. El lenguaje de programación diseñado para ello es una variación de C que contiene extensiones para trabajar con la GPU, amén de ciertas restricciones (no permite recursividad ni punteros a funciones, solo permite números en precisión simple en la mayoría de tarjetas lanzadas al mercado hasta ahora, etc.).
+A pesar de que existen diversos fabricantes especializados en dispositivos gráficos que ofrecen algún tipo de \emph{framework} para desarrollo de aplicaciones paralelas sobre GPGPU, e incluso alternativas más generales como OpenCL \cite{opencl}, NVIDIA es probablemente el que más ha apostado por este enfoque. Prácticamente desde los albores de esta computación, ha ido desarrollando un modelo de programación denominado CUDA (Compute Unified Device Architecture) \cite{aboutcuda}, que permite al programador ejecutar algoritmos casi arbitrarios en sus GPU. El lenguaje de programación diseñado para ello es una variación de C que contiene extensiones para trabajar con la GPU, amén de ciertas restricciones (no permite recursividad ni punteros a funciones, solo permite números en precisión simple en la mayoría de tarjetas lanzadas al mercado hasta ahora, etc.).
 
 \vspace{5 mm}
 
@@ -150,6 +150,8 @@ from pycuda.compiler import SourceModule
 
 Conviene hacer notar que aunque {\tt pycuda.autoinit} se encarga de inicializar el dispositivo (seleccionando el de mayor capacidad de cómputo si hay más de uno), así como de crear un contexto automáticamente, ambos aspectos pueden ser configurados manualmente.
 
+\vspace{5 mm}
+
 El siguiente paso consiste en cargar en memoria los datos que se desean procesar. En este punto, resulta muy aconsejable el uso del paquete {\tt NumPy} de la librería {\tt SciPy}, pues está provisto del potente tipo de dato {\tt numpy.array}, que facilita la preparación y manipulación de los datos. En este ejemplo, consideraremos dos arrays aleatorios \emph{a} y \emph{b}, cuyas componentes se restan dos a dos sobreescribiendo \emph{b} con el resultado.
 
 \begin{verbatim}
@@ -197,9 +199,15 @@ En cualquier caso, puede comprobarse como el overhead que introduce la utilizaci
 
 La manera tradicional de abordar la multiplicación de matrices pasa por ejecutar un algoritmo secuencial de complejidad casi cúbica en las mejores implementaciones. Su versión paralela, en cambio, permite el cálculo simultáneo de las filas de la primera matriz multiplicando con la correspondiente columna de la segunda para formar el resultado.
 
+\vspace{5 mm}
+
 BLAS (Basic Linear Algebra Subprograms) es, de facto, una interfaz estándar de programación de librerías que realizan operaciones básicas de álgebra lineal con vectores y/o matrices.
 
+\vspace{5 mm}
+
 Desde su primera publicación, en 1979, numerosos fabricantes de hardware han desarrollado versiones altamente optimizadas de BLAS. También NVIDIA lo ha incluido en el SDK de CUDA para proporcionar una versión de altas prestaciones para estas operaciones. Dicha implementación ha sido denominada CUBLAS.
+
+\vspace{5 mm}
 
 Por su parte, PyCUBLAS es un wrapper \cite{pycublas} de Python para CUBLAS creado por Derek Anderson que ha centrado su diseño en la multiplicación de grandes matrices. Dispone, además, de las ventajas ya comentadas de Python en cuanto a abstracción, lo que posibilita la ejecución de una operación con muy pocas líneas de código.
 
@@ -217,6 +225,8 @@ c = a * b
 \end{verbatim}
 
 Esta sencillez sintáctica podría ser atractiva para extender el uso de CUDA entre investigadores de otras ciencias cuyos estudios precisen de la manipulación de cantidades masivas de datos. 
+
+\vspace{5 mm}
 
 En esta sección se confrontan el tiempo de ejecución en el dispositivo de una multiplicación de matrices cuadradas de diferentes dimensiones, tanto a través de PyCUBLAS como de su correspondiente versión nativa en C. No se ha contemplado en la gráfica de la figura \ref{fig:pycublas} los tiempos de ejecución en la CPU, puesto que estos llegan a ser hasta 35 millones de veces mayor en el caso de una matrix de 2048x2048.
 
