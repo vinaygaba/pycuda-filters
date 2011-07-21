@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.7.19)  21 JUL 2011 02:10
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.7.19)  21 JUL 2011 02:29
 entering extended mode
  %&-line parsing enabled.
 **pycuda
@@ -349,43 +349,43 @@ Underfull \hbox (badness 5161) in paragraph at lines 151--152
  []
 
 
-Overfull \hbox (5.12796pt too wide) in paragraph at lines 179--179
+Overfull \hbox (5.12796pt too wide) in paragraph at lines 181--181
 []\EU1/lmtt/m/n/10 f(cuda.In(a), cuda.InOut(b), block=(16,16,1))[] 
  []
 
 [3]
 File: imgs/overhead-convolucion.png Graphic file (type QTm)
  <use  "imgs/overhead-convolucion.png" >
-Overfull \hbox (7.11319pt too wide) in paragraph at lines 191--192
+Overfull \hbox (7.11319pt too wide) in paragraph at lines 193--194
  [] 
  []
 
 
-Overfull \hbox (41.87796pt too wide) in paragraph at lines 217--217
+Overfull \hbox (41.87796pt too wide) in paragraph at lines 225--225
 []\EU1/lmtt/m/n/10 a = np.random.randn(width,length).astype(np.float32)[] 
  []
 
 
-Overfull \hbox (41.87796pt too wide) in paragraph at lines 217--217
+Overfull \hbox (41.87796pt too wide) in paragraph at lines 225--225
 []\EU1/lmtt/m/n/10 b = np.random.randn(width,length).astype(np.float32)[] 
  []
 
 File: imgs/pycublas.png Graphic file (type QTm)
 <use  "imgs/pycublas.png" >
-Overfull \hbox (7.11319pt too wide) in paragraph at lines 225--226
+Overfull \hbox (7.11319pt too wide) in paragraph at lines 235--236
  [] 
  []
 
 [4]
 File: imgs/UML.png Graphic file (type QTm)
  <use  "imgs/UML.png" >
-Overfull \hbox (7.11319pt too wide) in paragraph at lines 244--245
+Overfull \hbox (7.11319pt too wide) in paragraph at lines 254--255
  [] 
  []
 
 File: imgs/joined.png Graphic file (type QTm)
 <use  "imgs/joined.png" >
-Overfull \hbox (7.11319pt too wide) in paragraph at lines 264--265
+Overfull \hbox (7.11319pt too wide) in paragraph at lines 274--275
  [] 
  []
 
