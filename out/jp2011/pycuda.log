@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.3.15)  29 JUL 2011 11:47
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.3.15)  29 JUL 2011 12:10
 entering extended mode
  %&-line parsing enabled.
 **pycuda
@@ -447,12 +447,12 @@ Overfull \vbox (1.63751pt too high) has occurred while \output is active []
 
 [6] (./pycuda.aux) ) 
 Here is how much of TeX's memory you used:
- 7079 strings out of 95791
- 109520 string characters out of 1190541
+ 7080 strings out of 95791
+ 109531 string characters out of 1190541
  214843 words of memory out of 1500000
  10023 multiletter control sequences out of 10000+50000
  30308 words of font info for 124 fonts, out of 1200000 for 2000
- 37 hyphenation exceptions out of 8191
+ 38 hyphenation exceptions out of 8191
  35i,7n,72p,2232b,993s stack positions out of 5000i,500n,6000p,200000b,5000s
 
 Output written on pycuda.pdf (6 pages).
