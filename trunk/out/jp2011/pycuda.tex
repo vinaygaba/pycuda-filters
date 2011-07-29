@@ -182,7 +182,7 @@ kernel = SourceModule("""
   __global__ void name(float *a, 
                        float *b) {
     int idx = threadIdx.x;
-    b[idx] = b[idx] * a[idx];
+    b[idx] = b[idx] + a[idx];
   }
   """)
 f = kernel.get_function("name")
