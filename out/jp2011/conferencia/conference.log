@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.2.23)  6 SEP 2011 18:02
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2010.2.23)  6 SEP 2011 18:18
 entering extended mode
  %&-line parsing enabled.
 **conference
@@ -828,7 +828,7 @@ File: beamericonarticle.pdf Graphic file (type QTm)
  (./conference.aux) ) 
 Here is how much of TeX's memory you used:
  11771 strings out of 95791
- 210713 string characters out of 1190541
+ 210715 string characters out of 1190541
  283081 words of memory out of 1500000
  14540 multiletter control sequences out of 10000+50000
  31726 words of font info for 51 fonts, out of 1200000 for 2000
