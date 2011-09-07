@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.8.27)  7 SEP 2011 02:57
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2011.8.27)  7 SEP 2011 12:29
 entering extended mode
  %&-line parsing enabled.
 **conference
@@ -666,28 +666,7 @@ Package: beamercolorthemeorchid 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
 (/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemewhale.sty
 Package: beamercolorthemewhale 2010/06/17  (rcs-revision d02a7cf4d8ae)
-)) (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
-Package: caption 2009/10/09 v3.1k Customizing captions (AR)
-
-(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
-Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen178
-\captionmargin@=\dimen179
-\captionwidth=\dimen180
-\caption@indent=\dimen181
-\caption@parindent=\dimen182
-\caption@hangindent=\dimen183
-)
-\c@ContinuedFloat=\count153
-Package caption Info: beamer document class.
-Package caption Info: hyperref package is loaded.
-
-
-Package caption Warning: Hyperref support is turned off
-(caption)                because hyperref has stopped early.
-See the caption package documentation for explanation.
-
-) (/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+)) (/usr/share/texmf-texlive/tex/generic/babel/babel.sty
 Package: babel 2008/07/06 v3.8l The Babel package
 
 (/usr/share/texmf-texlive/tex/generic/babel/english.ldf
@@ -696,19 +675,56 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
 LaTeX Info: Redefining \textlatin on input line 82.
-\babel@savecnt=\count154
-\U@D=\dimen184
+\babel@savecnt=\count153
+\U@D=\dimen178
 )
 \l@british = a dialect from \language\l@english 
 \l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-))
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+)
+(/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Spanish'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@spanish = a dialect from \language0
+\es@datefmt=\count154
+\es@quottoks=\toks41
+\es@quotdepth=\count155
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+)) (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen179
+\captionmargin@=\dimen180
+\captionwidth=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
+)
+\c@ContinuedFloat=\count156
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+
+
+Package caption Warning: Hyperref support is turned off
+(caption)                because hyperref has stopped early.
+See the caption package documentation for explanation.
+
+) (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks41
-\inpenc@posthook=\toks42
+\inpenc@prehook=\toks42
+\inpenc@posthook=\toks43
 
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
@@ -724,23 +740,23 @@ File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count155
+\lst@mode=\count157
 \lst@gtempboxa=\box54
-\lst@token=\toks43
-\lst@length=\count156
+\lst@token=\toks44
+\lst@length=\count158
 \lst@currlwidth=\dimen185
-\lst@column=\count157
-\lst@pos=\count158
+\lst@column=\count159
+\lst@pos=\count160
 \lst@lostspace=\dimen186
 \lst@width=\dimen187
-\lst@newlines=\count159
-\lst@lineno=\count160
+\lst@newlines=\count161
+\lst@lineno=\count162
 \lst@maxwidth=\dimen188
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count161
-\lst@skipnumbers=\count162
+\c@lstnumber=\count163
+\lst@skipnumbers=\count164
 \lst@framebox=\box55
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
@@ -821,7 +837,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count163
+\c@section@level=\count165
 )
 LaTeX Info: Redefining \ref on input line 142.
 LaTeX Info: Redefining \pageref on input line 142.
@@ -901,7 +917,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count164
+\c@lstlisting=\count166
  (./conference.nav)
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 142.
@@ -1040,12 +1056,12 @@ File: imgs/question.jpg Graphic file (type QTm)
 
  (./conference.aux) ) 
 Here is how much of TeX's memory you used:
- 17772 strings out of 495724
- 323567 string characters out of 1189346
- 407679 words of memory out of 3000000
- 20431 multiletter control sequences out of 15000+50000
+ 18078 strings out of 495724
+ 327448 string characters out of 1189346
+ 413361 words of memory out of 3000000
+ 20734 multiletter control sequences out of 15000+50000
  33516 words of font info for 52 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 49i,19n,67p,395b,1446s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,19n,67p,395b,1448s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on conference.pdf (24 pages).
