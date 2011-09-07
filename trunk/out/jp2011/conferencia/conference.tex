@@ -66,6 +66,14 @@
   tabsize=1
 }
 
+\newenvironment{mydescription}[1]
+  {\begin{list}{}%
+   {\renewcommand\makelabel[1]{##1:\hfill}%
+   \settowidth\labelwidth{\makelabel{#1}}%
+   \setlength\leftmargin{\labelwidth}
+   \addtolength\leftmargin{\labelsep}}}
+  {\end{list}}
+
 
 \title[Computación con Python y CUDA] % (optional, use only with long paper titles)
 {Experiencias con Python y CUDA en Computación de Altas Prestaciones}
@@ -307,27 +315,64 @@ c = a * b
 
 \subsection{Algoritmo}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{Caso práctico: Detección de movimiento}
+\begin{enumerate}
+   \item Conversión a escala de grises de las 2 imágenes.
+   \item Aplicación del filtro de diferencia a las 2 imágenes.
+   \item Aplicación del filtro Threshold.
+   \item Aplicación del filtro de Erosión.
+   \item Mezcla en el canal R de la imagen original con la imagen resultado de los filtros.
+\end{enumerate}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{Caso práctico: Detección de movimiento}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=.8\textwidth]{frames.png}
+      \caption{Extracto de dos frames consecutivos del vídeo de trabajo}
+    \end{center}
+  \end{figure}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{Caso práctico: Detección de movimiento}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=.6\textwidth]{filters_step_by_step.png}
+      \caption{Aplicación del algoritmo paso a paso}
+    \end{center}
+  \end{figure}
 \end{frame}
 
+\subsection{Implementación}
 
-\subsection{Resultados}
-
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{Caso práctico: Detección de movimiento}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=.8\textwidth]{UML.png}
+      \caption{Jerarquía de clases del detector de movimiento}
+    \end{center}
+  \end{figure}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
-\end{frame}
+\begin{frame}[fragile]
+\frametitle{Caso práctico: Detección de movimiento}
+  \begin{mydescription}{MotionDetector}
+    \item[CUDAHandler] Abstracción de la comunicación con la GPU.
+    \item[VideoHandler] Abstracción de la manipulación de vídeo.
+    \item[Filter] Interfaz común de la que heredan los filtros.
+    \item[MotionDetector] Dirección del proceso de detección.
+  \end{mydescription}
 
-\begin{frame}{Make Titles Informative.}
-\end{frame}
+\vspace{5mm}
 
+Ejemplo: Aplicación del filtro de diferencia
+  \begin{lstlisting}
+cuda.loadData(input=self.images, output=self.post_img)
+from Kernels.difference_kernel import diffkernel
+cuda.setKernel(diffkernel)
+cuda.Launch((32, 32, 1))
+  \end{lstlisting}
+\end{frame}
 
 \section{Conclusiones}
 
@@ -342,22 +387,13 @@ c = a * b
 
 % All of the following is optional and typically not needed. 
 \appendix
-\section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
+\section<presentation>*{\appendixname sadfsdf}
+\subsection<presentation>*{Bibliografía destacada}
 
 \begin{frame}[allowframebreaks]
-  \frametitle<presentation>{For Further Reading}
+  \frametitle<presentation>{Bibliografía destacada}
     
   \begin{thebibliography}{10}
-    
-  \beamertemplatebookbibitems
-  % Start with overview books.
-
-  \bibitem{Author1990}
-    A.~Author.
-    \newblock {\em Handbook of Everything}.
-    \newblock Some Press, 1990.
- 
     
   \beamertemplatearticlebibitems
   % Followed by interesting articles. Keep the list short. 
@@ -365,12 +401,38 @@ c = a * b
    
   \bibitem{Klockner2009}
     Andreas Kl{\"o}ckner \emph{et ál.}
-    \newblock PyCUDA: GPU Run-Time Code Generation for High-Performance Computing
+    \newblock PyCUDA: GPU run-time code generation for high-performance computing
     \newblock arXiv:0911.3456v2
 
+  \bibitem{Anderson2009}
+    Derek Anderson
+    \newblock PyCUBLAS - Easy Python/NumPy/CUDA/CUBLAS integration
+    \newblock http://kered.org
+
+  \bibitem{Zhiyi2008}
+    Zhiyi Yang, Yating Zhu, Yong Pu
+    \newblock Parallel image processing based on CUDA
+    \newblock CSSE (3). 2008 pp. 198-201, IEEE Computer Society
   \end{thebibliography}
 \end{frame}
 
+
+\section*{Preguntas}
+
+\begin{frame}{Preguntas}
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=.5\textwidth]{question.jpg}
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\section*{Agradecimientos}
+
+\begin{frame}
+  \begin{center}
+    {\Huge Gracias por su atención}
+  \end{center}
+\end{frame}
+
 \end{document}
-
-
