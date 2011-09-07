@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.10pt}
-\select@language {english}
+\select@language {spanish}
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
 \beamer@sectionintoc {2}{Computaci\'on con Python y CUDA}{4}{0}{2}
 \beamer@subsectionintoc {2}{1}{PyCUDA}{4}{0}{2}
