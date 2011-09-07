@@ -45,33 +45,41 @@
 \headcommand {\beamer@framepages {16}{16}}
 \headcommand {\slideentry {3}{1}{4}{17/17}{Algoritmo}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{18}{Resultados}}\headcommand {\beamer@subsectionpages {14}{17}}
-\headcommand {\slideentry {3}{2}{1}{18/18}{Resultados}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{18}{Implementaci\'on}}\headcommand {\beamer@subsectionpages {14}{17}}
+\headcommand {\slideentry {3}{2}{1}{18/18}{Implementaci\'on}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {3}{2}{2}{19/19}{Resultados}{0}}
+\headcommand {\slideentry {3}{2}{2}{19/19}{Implementaci\'on}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {3}{2}{3}{20/20}{Resultados}{0}}
+\headcommand {\slideentry {3}{2}{3}{20/20}{Implementaci\'on}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {3}{2}{4}{21/21}{Resultados}{0}}
+\headcommand {\sectionentry {4}{Conclusiones}{21}{Conclusiones}{0}}
+\headcommand {\beamer@sectionpages {14}{20}}
+\headcommand {\beamer@subsectionpages {18}{20}}
+\headcommand {\slideentry {4}{0}{4}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\sectionentry {4}{Conclusiones}{22}{Conclusiones}{0}}
-\headcommand {\beamer@sectionpages {14}{21}}
-\headcommand {\beamer@subsectionpages {18}{21}}
-\headcommand {\slideentry {4}{0}{5}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
 \headcommand {\partentry {Appendix}{1}}
-\headcommand {\beamer@partpages {1}{22}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@sectionpages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@appendixpages {22}}
+\headcommand {\sectionentry {5}{Appendixsadfsdf}{22}{Appendixsadfsdf}{1}}
+\headcommand {\beamer@sectionpages {22}{21}}
+\headcommand {\beamer@subsectionpages {22}{21}}
+\headcommand {\beamer@subsectionentry {1}{5}{1}{22}{Bibliograf\IeC {\'\i }a destacada}}\headcommand {\beamer@subsectionpages {22}{21}}
+\headcommand {\slideentry {5}{1}{1}{22/22}{Bibliograf\IeC {\'\i }a destacada}{1}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\sectionentry {6}{Preguntas}{23}{Preguntas}{1}}
 \headcommand {\beamer@sectionpages {22}{22}}
 \headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\beamer@appendixpages {23}}
-\headcommand {\sectionentry {5}{Appendix}{23}{Appendix}{1}}
-\headcommand {\beamer@sectionpages {23}{22}}
-\headcommand {\beamer@subsectionpages {23}{22}}
-\headcommand {\beamer@subsectionentry {1}{5}{1}{23}{For Further Reading}}\headcommand {\beamer@subsectionpages {23}{22}}
-\headcommand {\slideentry {5}{1}{1}{23/23}{For Further Reading}{1}}
+\headcommand {\slideentry {6}{0}{2}{23/23}{}{1}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\beamer@partpages {23}{23}}
-\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\sectionentry {7}{Agradecimientos}{24}{Agradecimientos}{1}}
 \headcommand {\beamer@sectionpages {23}{23}}
-\headcommand {\beamer@documentpages {23}}
-\headcommand {\def \inserttotalframenumber {23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\slideentry {7}{0}{3}{24/24}{}{1}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@partpages {22}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@sectionpages {24}{24}}
+\headcommand {\beamer@documentpages {24}}
+\headcommand {\def \inserttotalframenumber {24}}
